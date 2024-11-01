@@ -1,9 +1,0 @@
-Link para vídeo explicando o Código no Drive:
-https://drive.google.com/file/d/1BdPsGiYorF4ccSVZwostfu7Yp-wIHkuT/view?usp=sharing
-
-Caso o link acima não funcione, link para o vídeo explicando o Código no Youtube:
-https://youtu.be/ThfmpGmnxmE
-
-Link para a Base de Dados:
-https://web.inf.ufpr.br/vri/databases/parking-lot-database/
-
