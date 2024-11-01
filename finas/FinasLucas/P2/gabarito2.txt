@@ -1,0 +1,43 @@
+Questão 6 -> prova2_2015_1.pdf
+
+img = imread('lenna.png');
+[lin, col, ~] = size(img);
+fimg = fft2(img);
+
+soma_pixels = sum(sum(double(img)));
+media_pixels = mean(mean(double(img)));
+
+if fimg(1, 1) == soma_pixels % componente DC
+	disp('o termo 1/MN esta na transformada inversa')
+elseif fimg(1, 1) = media_pixels 
+	disp('o termo 1/MN esta na transformada de Fourier')
+else
+	disp('o termo 1/raiz(MN) esta na transformada de Fourier e na transformada inversa')
+end 
+
+
+
+-----------------------------------------------------------------
+Questão 3 -> prova2_2011_1.pdf
+
+img = imread('lenna.png');
+[lin, col, ~] = size(img);
+ 
+raio1 = 20;
+raio2 = 50;
+maskLP = GaussianBaixaMask(lin, col, raio1);
+maskHP = 1 - GaussianBaixaMask(lin, col, raio2);
+
+maskBP = maskLP .* maskHP;
+
+figure; mesh(maskLP); title('Mascara Passa-baixa');
+figure; mesh(maskHP); title('Mascara Passa-alta');
+figure; mesh(maskBP); title('Mascara Passa-banda');
+
+
+function mask = GaussianBaixaMask(row, col, sigma)
+[x, y] = gridFourier(row, col);
+z = sqrt(x.^2 + y.^2);
+mask = exp(-(z.^2) ./ (2*(sigma^2)) );
+end
+
